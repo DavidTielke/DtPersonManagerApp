@@ -1,4 +1,5 @@
 ﻿using DataStoring;
+using DataStoring.InMemory;
 using Ninject;
 using PersonManagement;
 
@@ -11,7 +12,7 @@ namespace Mappings
             var kernel = new StandardKernel();
 
             kernel.Bind<IPersonManager>().To<PersonManager>();
-            kernel.Bind<IPersonRepository>().To<PersonRepository>();
+            kernel.Bind<IPersonRepository>().To<PersonMemRepository>();
 
             return kernel;
         }

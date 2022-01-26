@@ -11,6 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataStoring.InMemory\DataStoring.InMemory.csproj" />
+    <ProjectReference Include="..\DataStoring\DataStoring.csproj" />
     <ProjectReference Include="..\PersonManagement\PersonManagement.csproj" />
   </ItemGroup>
 
