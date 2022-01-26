@@ -1,5 +1,6 @@
 ﻿
 using DataStoring;
+using Ninject;
 using PersonManagement;
 
 namespace ConsoleClient
@@ -8,8 +9,12 @@ namespace ConsoleClient
     {
         public static void Main()
         {
-            IPersonRepository repository = new PersonRepository();
-            IPersonManager manager = new PersonManager(repository);
+            var kernel = new StandardKernel();
+
+            kernel.Bind<IPersonManager>().To<PersonManager>();
+            kernel.Bind<IPersonRepository>().To<PersonRepository>();
+
+            var manager = kernel.Get<IPersonManager>();
 
             var adults = manager.GetAllAdults();
             var children = manager.GetAllChildren();
