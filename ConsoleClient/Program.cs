@@ -1,5 +1,6 @@
 ﻿
 using DataStoring;
+using Mappings;
 using Ninject;
 using PersonManagement;
 
@@ -9,10 +10,7 @@ namespace ConsoleClient
     {
         public static void Main()
         {
-            var kernel = new StandardKernel();
-
-            kernel.Bind<IPersonManager>().To<PersonManager>();
-            kernel.Bind<IPersonRepository>().To<PersonRepository>();
+            var kernel = new KernelFactory().Create();
 
             var manager = kernel.Get<IPersonManager>();
 

@@ -6,7 +6,7 @@ namespace PersonManagement
     public class PersonManager : IPersonManager
     {
         private readonly IPersonRepository _repository;
-
+        
         public PersonManager(IPersonRepository repository)
         {
             _repository = repository;
