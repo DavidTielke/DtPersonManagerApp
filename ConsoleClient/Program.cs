@@ -1,4 +1,5 @@
 ﻿
+using DataStoring;
 using PersonManagement;
 
 namespace ConsoleClient
@@ -7,7 +8,8 @@ namespace ConsoleClient
     {
         public static void Main()
         {
-            var manager = new PersonManager();
+            IPersonRepository repository = new PersonRepository();
+            IPersonManager manager = new PersonManager(repository);
 
             var adults = manager.GetAllAdults();
             var children = manager.GetAllChildren();

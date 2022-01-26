@@ -2,7 +2,7 @@
 
 namespace DataStoring
 {
-    public class PersonRepository
+    public class PersonRepository : IPersonRepository
     {
         public IQueryable<Person> Query => new List<Person>
         {
