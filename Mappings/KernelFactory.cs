@@ -12,7 +12,7 @@ namespace Mappings
             var kernel = new StandardKernel();
 
             kernel.Bind<IPersonManager>().To<PersonManager>();
-            kernel.Bind<IPersonRepository>().To<PersonMemRepository>();
+            kernel.Bind<IPersonRepository>().To<PersonRepository>();
 
             return kernel;
         }

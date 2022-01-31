@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="DataClasses\" />
     <Folder Include="Callbacks\" />
-    <Folder Include="Exceptions\" />
   </ItemGroup>
 
   <ItemGroup>

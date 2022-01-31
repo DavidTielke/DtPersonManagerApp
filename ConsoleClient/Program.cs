@@ -1,4 +1,6 @@
 ﻿
+using System.Text;
+using DataClasses;
 using DataStoring;
 using Mappings;
 using Ninject;
@@ -22,6 +24,26 @@ namespace ConsoleClient
 
             Console.WriteLine("### Kinder (" + children.Count() + ") ###");
             children.ToList().ForEach(c => Console.WriteLine(c.Name));
+
+            var hasi = new Person(4, "Hasi", 9);
+            try
+            {
+                manager.Add(hasi);
+            }
+            catch (Exception e)
+            {
+                var message = new StringBuilder();
+                Exception current = e;
+                do
+                {
+                    message.AppendLine(current.Message);
+                    current = current.InnerException;
+                } while (current != null);
+
+               File.WriteAllText("log.txt", e.Message);
+               Console.WriteLine(message.ToString());
+            }
+
 
         }
     }

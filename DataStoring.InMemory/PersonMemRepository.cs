@@ -10,5 +10,10 @@ namespace DataStoring.InMemory
             new Person(2, "TLena", 34),
             new Person(3, "TMaximilian", 9),
         }.AsQueryable();
+
+        public void Insert(Person person)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
